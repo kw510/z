@@ -28,7 +28,7 @@ jobs:
           - 5432:5432
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Postgres
         run: psql < db/schema.sql
@@ -39,10 +39,9 @@ jobs:
           PGUSER: z
 
       - name: Setup Go
-        uses: actions/setup-go@v3
-
-      - name: Install dependencies
-        run: go mod download
+        uses: actions/setup-go@v4
+        with:
+          go-version: '>=1.24.3'
 
       - name: Build
         run: make all
