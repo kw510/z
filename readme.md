@@ -1,5 +1,5 @@
 # z
-[![CI](https://github.com/kw510/z/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/kw510/z/actions/workflows/ci.yml)
+[![CI](https://github.com/kw510/z/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/kw510/z/actions/workflows/go.yml)
 [![codecov](https://codecov.io/github/kw510/z/graph/badge.svg?token=Z1KJKQDGOH)](https://codecov.io/github/kw510/z)
 [![Go Report Card](https://goreportcard.com/badge/github.com/kw510/z)](https://goreportcard.com/report/github.com/kw510/z)
 
