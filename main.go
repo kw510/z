@@ -28,7 +28,7 @@ func run() error {
 	if err := db.Init(ctx); err != nil {
 		return fmt.Errorf("failed to initialize database: %w", err)
 	}
-	defer db.Close(ctx)
+	defer db.Close()
 
 	srv, err := srv.Init(ctx)
 	if err != nil {

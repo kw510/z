@@ -44,6 +44,6 @@ func Tx(ctx context.Context, fn func(ctx context.Context, tx pgx.Tx) error) erro
 	return nil
 }
 
-func Close(ctx context.Context) {
+func Close() {
 	pg.Close()
 }

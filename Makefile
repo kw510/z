@@ -1,3 +1,8 @@
+ifneq ($(filter test,$(MAKECMDGOALS)),)
+	include ./.env.test
+	export $(shell sed 's/=.*//' .env.test)
+endif
+
 all: build
 
 build: $(shell find . -type f -name "*.go")

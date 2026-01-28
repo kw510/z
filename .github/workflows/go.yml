@@ -49,4 +49,7 @@ jobs:
       - name: Test
         run: make test:ci
         env:
+          PGDATABASE: test-z
+          PGHOST: localhost
           PGPASSWORD: postgres
+          PGUSER: z
