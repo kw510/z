@@ -22,7 +22,7 @@ services:
       - "8080:8080"
     environment:
       PGHOST: db
-      PGDATABASE: z
+      PGDATABASE: zee
       PGUSER: postgres
       PGPASSWORD: postgres
 ```
