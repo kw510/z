@@ -9,11 +9,11 @@ ARG TARGETARCH
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy the module files
-COPY . .
-
 # Download the go dependencies
+COPY go.mod go.sum ./
 RUN go mod download
+
+COPY *.go ./
 
 # Build a static application binary
 RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -o ./tmp/main
@@ -24,6 +24,6 @@ RUN go install github.com/air-verse/air@latest
 CMD ["air", "-c", ".air.toml"]
 
 ## Production stage, using a static binary and scratch image
-FROM scratch
+FROM scratch AS production
 COPY --from=builder /app/tmp/main /app
 CMD ["/app"]
