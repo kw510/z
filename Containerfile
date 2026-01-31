@@ -24,6 +24,6 @@ RUN go install github.com/air-verse/air@latest
 CMD ["air", "-c", ".air.toml"]
 
 ## Production stage, using a static binary and scratch image
-FROM --platform=$TARGETPLATFORM scratch
+FROM scratch
 COPY --from=builder /app/tmp/main /app
 CMD ["/app"]
