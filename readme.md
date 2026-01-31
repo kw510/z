@@ -10,6 +10,7 @@ To use the pre-built Docker image, pull it from the GitHub Container Registry:
 
 ```
 docker pull ghcr.io/kw510/zee:latest
+docker pull kw510/zee:latest
 ```
 
 You can use the image in your Docker setup. Here is an example docker-compose.yml file:
