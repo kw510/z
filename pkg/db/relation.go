@@ -57,3 +57,36 @@ func (r Relation) List(ctx context.Context) ([]Relation, error) {
 	}
 	return relations, nil
 }
+
+func (r Relation) ListParentRelations(ctx context.Context, parentNamespace string, parentId string, child Set) ([]Relation, error) {
+	q := `
+		SELECT 
+			namespace, relation, permission
+		FROM tuples, relations
+		WHERE
+			relations.relation = tuples.parent_relation AND
+			relations.namespace = tuples.parent_namespace AND
+			tuples.parent_namespace = $1 AND
+			tuples.parent_id = $2 AND
+			tuples.child_namespace = $3 AND
+			tuples.child_id = $4 AND
+			tuples.child_relation = $5
+	`
+
+	rows, err := pg.Query(ctx, q, parentNamespace, parentId, child.Namespace, child.Id, child.Relation)
+	if err != nil {
+		return nil, fmt.Errorf("failed to list relations: %w", err)
+	}
+	defer rows.Close()
+
+	relations := []Relation{}
+	for rows.Next() {
+		var relation Relation
+		err := rows.Scan(&relation.Namespace, &relation.Relation, &relation.Permission)
+		if err != nil {
+			return nil, fmt.Errorf("failed to scan relation: %w", err)
+		}
+		relations = append(relations, relation)
+	}
+	return relations, nil
+}

@@ -180,3 +180,27 @@ func (srv *ApiServer) Namespaces(ctx context.Context, req *connect.Request[apiv1
 		},
 	}, nil
 }
+
+func (srv *ApiServer) ParentRelations(ctx context.Context, req *connect.Request[apiv1.ParentRelationsRequest]) (*connect.Response[apiv1.ParentRelationsResponse], error) {
+	relations, err := db.Relation{}.ListParentRelations(ctx, req.Msg.GetParentNamespace(), req.Msg.GetParentId(), db.Set{
+		Namespace: req.Msg.GetChild().GetNamespace(),
+		Id:        req.Msg.GetChild().GetId(),
+		Relation:  req.Msg.GetChild().GetRelation(),
+	})
+	if err != nil {
+		return nil, connect.NewError(connect.CodeInternal, err)
+	}
+
+	relationsProto := map[string]*apiv1.Relation{}
+	for _, relation := range relations {
+		if _, ok := relationsProto[relation.Relation]; !ok {
+			relationsProto[relation.Relation] = &apiv1.Relation{}
+		}
+		relationsProto[relation.Relation].Permissions = append(relationsProto[relation.Relation].Permissions, relation.Permission)
+	}
+	return &connect.Response[apiv1.ParentRelationsResponse]{
+		Msg: &apiv1.ParentRelationsResponse{
+			Relations: relationsProto,
+		},
+	}, nil
+}

@@ -42,6 +42,9 @@ const (
 	// ApiServiceWriteNamespaceRelationsProcedure is the fully-qualified name of the ApiService's
 	// WriteNamespaceRelations RPC.
 	ApiServiceWriteNamespaceRelationsProcedure = "/z.api.v1.ApiService/WriteNamespaceRelations"
+	// ApiServiceParentRelationsProcedure is the fully-qualified name of the ApiService's
+	// ParentRelations RPC.
+	ApiServiceParentRelationsProcedure = "/z.api.v1.ApiService/ParentRelations"
 )
 
 // ApiServiceClient is a client for the z.api.v1.ApiService service.
@@ -50,6 +53,7 @@ type ApiServiceClient interface {
 	Write(context.Context, *connect.Request[v1.WriteRequest]) (*connect.Response[v1.WriteResponse], error)
 	Namespaces(context.Context, *connect.Request[v1.NamespacesRequest]) (*connect.Response[v1.NamespacesResponse], error)
 	WriteNamespaceRelations(context.Context, *connect.Request[v1.WriteNamespaceRelationsRequest]) (*connect.Response[v1.WriteNamespaceRelationsResponse], error)
+	ParentRelations(context.Context, *connect.Request[v1.ParentRelationsRequest]) (*connect.Response[v1.ParentRelationsResponse], error)
 }
 
 // NewApiServiceClient constructs a client for the z.api.v1.ApiService service. By default, it uses
@@ -87,6 +91,12 @@ func NewApiServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(apiServiceMethods.ByName("WriteNamespaceRelations")),
 			connect.WithClientOptions(opts...),
 		),
+		parentRelations: connect.NewClient[v1.ParentRelationsRequest, v1.ParentRelationsResponse](
+			httpClient,
+			baseURL+ApiServiceParentRelationsProcedure,
+			connect.WithSchema(apiServiceMethods.ByName("ParentRelations")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
@@ -96,6 +106,7 @@ type apiServiceClient struct {
 	write                   *connect.Client[v1.WriteRequest, v1.WriteResponse]
 	namespaces              *connect.Client[v1.NamespacesRequest, v1.NamespacesResponse]
 	writeNamespaceRelations *connect.Client[v1.WriteNamespaceRelationsRequest, v1.WriteNamespaceRelationsResponse]
+	parentRelations         *connect.Client[v1.ParentRelationsRequest, v1.ParentRelationsResponse]
 }
 
 // Check calls z.api.v1.ApiService.Check.
@@ -118,12 +129,18 @@ func (c *apiServiceClient) WriteNamespaceRelations(ctx context.Context, req *con
 	return c.writeNamespaceRelations.CallUnary(ctx, req)
 }
 
+// ParentRelations calls z.api.v1.ApiService.ParentRelations.
+func (c *apiServiceClient) ParentRelations(ctx context.Context, req *connect.Request[v1.ParentRelationsRequest]) (*connect.Response[v1.ParentRelationsResponse], error) {
+	return c.parentRelations.CallUnary(ctx, req)
+}
+
 // ApiServiceHandler is an implementation of the z.api.v1.ApiService service.
 type ApiServiceHandler interface {
 	Check(context.Context, *connect.Request[v1.CheckRequest]) (*connect.Response[v1.CheckResponse], error)
 	Write(context.Context, *connect.Request[v1.WriteRequest]) (*connect.Response[v1.WriteResponse], error)
 	Namespaces(context.Context, *connect.Request[v1.NamespacesRequest]) (*connect.Response[v1.NamespacesResponse], error)
 	WriteNamespaceRelations(context.Context, *connect.Request[v1.WriteNamespaceRelationsRequest]) (*connect.Response[v1.WriteNamespaceRelationsResponse], error)
+	ParentRelations(context.Context, *connect.Request[v1.ParentRelationsRequest]) (*connect.Response[v1.ParentRelationsResponse], error)
 }
 
 // NewApiServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -157,6 +174,12 @@ func NewApiServiceHandler(svc ApiServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(apiServiceMethods.ByName("WriteNamespaceRelations")),
 		connect.WithHandlerOptions(opts...),
 	)
+	apiServiceParentRelationsHandler := connect.NewUnaryHandler(
+		ApiServiceParentRelationsProcedure,
+		svc.ParentRelations,
+		connect.WithSchema(apiServiceMethods.ByName("ParentRelations")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/z.api.v1.ApiService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case ApiServiceCheckProcedure:
@@ -167,6 +190,8 @@ func NewApiServiceHandler(svc ApiServiceHandler, opts ...connect.HandlerOption) 
 			apiServiceNamespacesHandler.ServeHTTP(w, r)
 		case ApiServiceWriteNamespaceRelationsProcedure:
 			apiServiceWriteNamespaceRelationsHandler.ServeHTTP(w, r)
+		case ApiServiceParentRelationsProcedure:
+			apiServiceParentRelationsHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -190,4 +215,8 @@ func (UnimplementedApiServiceHandler) Namespaces(context.Context, *connect.Reque
 
 func (UnimplementedApiServiceHandler) WriteNamespaceRelations(context.Context, *connect.Request[v1.WriteNamespaceRelationsRequest]) (*connect.Response[v1.WriteNamespaceRelationsResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("z.api.v1.ApiService.WriteNamespaceRelations is not implemented"))
+}
+
+func (UnimplementedApiServiceHandler) ParentRelations(context.Context, *connect.Request[v1.ParentRelationsRequest]) (*connect.Response[v1.ParentRelationsResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("z.api.v1.ApiService.ParentRelations is not implemented"))
 }

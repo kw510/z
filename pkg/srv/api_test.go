@@ -28,14 +28,15 @@ func TestMain(m *testing.M) {
 }
 
 func TestApiServerCheckDirect(t *testing.T) {
+	namespace := "co.acme." + xid.New().String()
 	tuple := &apiv1.Tuple{
 		Parent: &apiv1.Set{
-			Namespace: "co.acme.Note",
+			Namespace: namespace + ".Note",
 			Id:        xid.New().String(),
 			Relation:  "owner",
 		},
 		Child: &apiv1.Set{
-			Namespace: "co.acme.User",
+			Namespace: namespace + ".User",
 			Id:        xid.New().String(),
 		},
 	}
@@ -72,21 +73,22 @@ func TestApiServerCheckDirect(t *testing.T) {
 }
 
 func TestApiServerCheckParentSubset(t *testing.T) {
+	namespace := "co.acme." + xid.New().String()
 	groupMember := &apiv1.Tuple{
 		Parent: &apiv1.Set{
-			Namespace: "co.acme.Group",
+			Namespace: namespace + ".Group",
 			Id:        xid.New().String(),
 			Relation:  "member",
 		},
 		Child: &apiv1.Set{
-			Namespace: "co.acme.User",
+			Namespace: namespace + ".User",
 			Id:        xid.New().String(),
 		},
 	}
 
 	groupAccess := &apiv1.Tuple{
 		Parent: &apiv1.Set{
-			Namespace: "co.acme.Note",
+			Namespace: namespace + ".Note",
 			Id:        xid.New().String(),
 			Relation:  "owner",
 		},
@@ -171,23 +173,24 @@ func TestApiServerCheckParentSubset(t *testing.T) {
 }
 
 func TestApiServerNamespaces(t *testing.T) {
+	namespace := "co.acme." + xid.New().String()
 	ctx := context.Background()
 	srv := &srv.ApiServer{}
 
 	srv.WriteNamespaceRelations(ctx, connect.NewRequest(&apiv1.WriteNamespaceRelationsRequest{
 		Adds: []*apiv1.NamespaceRelation{
 			{
-				Namespace:  "co.acme.Note",
+				Namespace:  namespace + ".Note",
 				Relation:   "owner",
 				Permission: "read",
 			},
 			{
-				Namespace:  "co.acme.Note",
+				Namespace:  namespace + ".Note",
 				Relation:   "owner",
 				Permission: "write",
 			},
 			{
-				Namespace:  "co.acme.Note",
+				Namespace:  namespace + ".Note",
 				Relation:   "owner",
 				Permission: "delete",
 			},
@@ -198,6 +201,61 @@ func TestApiServerNamespaces(t *testing.T) {
 	res, err := srv.Namespaces(ctx, req)
 
 	require.NoError(t, err)
-	require.Equal(t, []string{"read", "write", "delete"}, res.Msg.Namespaces["co.acme.Note"].Relations["owner"].Permissions)
+	require.ElementsMatch(t, []string{"read", "write", "delete"}, res.Msg.Namespaces[namespace+".Note"].Relations["owner"].Permissions)
 
+}
+
+func TestApiServerParentRelations(t *testing.T) {
+	ctx := context.Background()
+	srv := &srv.ApiServer{}
+
+	namespace := "co.acme." + xid.New().String()
+	tuple := &apiv1.Tuple{
+		Parent: &apiv1.Set{
+			Namespace: namespace + ".Note",
+			Id:        xid.New().String(),
+			Relation:  "owner",
+		},
+		Child: &apiv1.Set{
+			Namespace: namespace + ".User",
+			Id:        xid.New().String(),
+		},
+	}
+
+	_, err := srv.Write(ctx, connect.NewRequest(&apiv1.WriteRequest{
+		Adds: []*apiv1.Tuple{
+			tuple,
+		},
+	}))
+	require.NoError(t, err)
+
+	_, err = srv.WriteNamespaceRelations(ctx, connect.NewRequest(&apiv1.WriteNamespaceRelationsRequest{
+		Adds: []*apiv1.NamespaceRelation{
+			{
+				Namespace:  namespace + ".Note",
+				Relation:   "owner",
+				Permission: "read",
+			},
+			{
+				Namespace:  namespace + ".Note",
+				Relation:   "owner",
+				Permission: "write",
+			},
+			{
+				Namespace:  namespace + ".Note",
+				Relation:   "owner",
+				Permission: "delete",
+			},
+		},
+	}))
+	require.NoError(t, err)
+
+	req := connect.NewRequest(&apiv1.ParentRelationsRequest{
+		ParentNamespace: tuple.Parent.Namespace,
+		ParentId:        tuple.Parent.Id,
+		Child:           tuple.Child,
+	})
+	res, err := srv.ParentRelations(ctx, req)
+	require.NoError(t, err)
+	require.ElementsMatch(t, []string{"read", "write", "delete"}, res.Msg.Relations["owner"].Permissions)
 }

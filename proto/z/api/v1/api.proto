@@ -7,6 +7,7 @@ service ApiService {
 	rpc Write(WriteRequest) returns (WriteResponse);
   rpc Namespaces(NamespacesRequest) returns (NamespacesResponse);
   rpc WriteNamespaceRelations(WriteNamespaceRelationsRequest) returns (WriteNamespaceRelationsResponse);
+  rpc ParentRelations(ParentRelationsRequest) returns (ParentRelationsResponse);
 }
 
 message Set {
@@ -62,3 +63,13 @@ message WriteNamespaceRelationsRequest {
 }
 
 message WriteNamespaceRelationsResponse {}
+
+message ParentRelationsRequest {
+  string parent_namespace = 1;
+  string parent_id = 2;
+  Set child = 3;
+}
+
+message ParentRelationsResponse {
+  map<string, Relation> relations = 1;
+}
