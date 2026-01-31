@@ -6,8 +6,8 @@ import (
 
 	"connectrpc.com/connect"
 	"github.com/jackc/pgx/v5"
-	"github.com/kw510/z/pkg/db"
-	apiv1 "github.com/kw510/z/pkg/gen/z/api/v1"
+	"github.com/kw510/zee/pkg/db"
+	apiv1 "github.com/kw510/zee/pkg/gen/zee/api/v1"
 )
 
 type ApiServer struct{}

@@ -8,9 +8,9 @@ import (
 	"testing"
 
 	"connectrpc.com/connect"
-	"github.com/kw510/z/pkg/db"
-	apiv1 "github.com/kw510/z/pkg/gen/z/api/v1"
-	"github.com/kw510/z/pkg/srv"
+	"github.com/kw510/zee/pkg/db"
+	apiv1 "github.com/kw510/zee/pkg/gen/zee/api/v1"
+	"github.com/kw510/zee/pkg/srv"
 	"github.com/rs/xid"
 	"github.com/stretchr/testify/require"
 )

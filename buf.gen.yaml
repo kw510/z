@@ -3,7 +3,7 @@ managed:
   enabled: true
   override:
     - file_option: go_package_prefix
-      value: github.com/kw510/z/pkg/gen
+      value: github.com/kw510/zee/pkg/gen
 
 plugins:
   - remote: buf.build/protocolbuffers/go

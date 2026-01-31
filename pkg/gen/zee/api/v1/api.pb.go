@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: z/api/v1/api.proto
+// source: zee/api/v1/api.proto
 
 package apiv1
 
@@ -32,7 +32,7 @@ type Set struct {
 
 func (x *Set) Reset() {
 	*x = Set{}
-	mi := &file_z_api_v1_api_proto_msgTypes[0]
+	mi := &file_zee_api_v1_api_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +44,7 @@ func (x *Set) String() string {
 func (*Set) ProtoMessage() {}
 
 func (x *Set) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[0]
+	mi := &file_zee_api_v1_api_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *Set) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Set.ProtoReflect.Descriptor instead.
 func (*Set) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{0}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Set) GetNamespace() string {
@@ -91,7 +91,7 @@ type Tuple struct {
 
 func (x *Tuple) Reset() {
 	*x = Tuple{}
-	mi := &file_z_api_v1_api_proto_msgTypes[1]
+	mi := &file_zee_api_v1_api_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -103,7 +103,7 @@ func (x *Tuple) String() string {
 func (*Tuple) ProtoMessage() {}
 
 func (x *Tuple) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[1]
+	mi := &file_zee_api_v1_api_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -116,7 +116,7 @@ func (x *Tuple) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Tuple.ProtoReflect.Descriptor instead.
 func (*Tuple) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{1}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Tuple) GetParent() *Set {
@@ -142,7 +142,7 @@ type Relation struct {
 
 func (x *Relation) Reset() {
 	*x = Relation{}
-	mi := &file_z_api_v1_api_proto_msgTypes[2]
+	mi := &file_zee_api_v1_api_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -154,7 +154,7 @@ func (x *Relation) String() string {
 func (*Relation) ProtoMessage() {}
 
 func (x *Relation) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[2]
+	mi := &file_zee_api_v1_api_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -167,7 +167,7 @@ func (x *Relation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Relation.ProtoReflect.Descriptor instead.
 func (*Relation) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{2}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Relation) GetPermissions() []string {
@@ -186,7 +186,7 @@ type Namespace struct {
 
 func (x *Namespace) Reset() {
 	*x = Namespace{}
-	mi := &file_z_api_v1_api_proto_msgTypes[3]
+	mi := &file_zee_api_v1_api_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -198,7 +198,7 @@ func (x *Namespace) String() string {
 func (*Namespace) ProtoMessage() {}
 
 func (x *Namespace) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[3]
+	mi := &file_zee_api_v1_api_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -211,7 +211,7 @@ func (x *Namespace) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Namespace.ProtoReflect.Descriptor instead.
 func (*Namespace) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{3}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Namespace) GetRelations() map[string]*Relation {
@@ -231,7 +231,7 @@ type CheckRequest struct {
 
 func (x *CheckRequest) Reset() {
 	*x = CheckRequest{}
-	mi := &file_z_api_v1_api_proto_msgTypes[4]
+	mi := &file_zee_api_v1_api_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -243,7 +243,7 @@ func (x *CheckRequest) String() string {
 func (*CheckRequest) ProtoMessage() {}
 
 func (x *CheckRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[4]
+	mi := &file_zee_api_v1_api_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -256,7 +256,7 @@ func (x *CheckRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CheckRequest.ProtoReflect.Descriptor instead.
 func (*CheckRequest) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{4}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CheckRequest) GetParent() *Set {
@@ -282,7 +282,7 @@ type CheckResponse struct {
 
 func (x *CheckResponse) Reset() {
 	*x = CheckResponse{}
-	mi := &file_z_api_v1_api_proto_msgTypes[5]
+	mi := &file_zee_api_v1_api_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -294,7 +294,7 @@ func (x *CheckResponse) String() string {
 func (*CheckResponse) ProtoMessage() {}
 
 func (x *CheckResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[5]
+	mi := &file_zee_api_v1_api_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -307,7 +307,7 @@ func (x *CheckResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CheckResponse.ProtoReflect.Descriptor instead.
 func (*CheckResponse) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{5}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *CheckResponse) GetAllowed() bool {
@@ -327,7 +327,7 @@ type WriteRequest struct {
 
 func (x *WriteRequest) Reset() {
 	*x = WriteRequest{}
-	mi := &file_z_api_v1_api_proto_msgTypes[6]
+	mi := &file_zee_api_v1_api_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -339,7 +339,7 @@ func (x *WriteRequest) String() string {
 func (*WriteRequest) ProtoMessage() {}
 
 func (x *WriteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[6]
+	mi := &file_zee_api_v1_api_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -352,7 +352,7 @@ func (x *WriteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WriteRequest.ProtoReflect.Descriptor instead.
 func (*WriteRequest) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{6}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *WriteRequest) GetAdds() []*Tuple {
@@ -377,7 +377,7 @@ type WriteResponse struct {
 
 func (x *WriteResponse) Reset() {
 	*x = WriteResponse{}
-	mi := &file_z_api_v1_api_proto_msgTypes[7]
+	mi := &file_zee_api_v1_api_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -389,7 +389,7 @@ func (x *WriteResponse) String() string {
 func (*WriteResponse) ProtoMessage() {}
 
 func (x *WriteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[7]
+	mi := &file_zee_api_v1_api_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -402,7 +402,7 @@ func (x *WriteResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WriteResponse.ProtoReflect.Descriptor instead.
 func (*WriteResponse) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{7}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{7}
 }
 
 type NamespacesRequest struct {
@@ -413,7 +413,7 @@ type NamespacesRequest struct {
 
 func (x *NamespacesRequest) Reset() {
 	*x = NamespacesRequest{}
-	mi := &file_z_api_v1_api_proto_msgTypes[8]
+	mi := &file_zee_api_v1_api_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -425,7 +425,7 @@ func (x *NamespacesRequest) String() string {
 func (*NamespacesRequest) ProtoMessage() {}
 
 func (x *NamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[8]
+	mi := &file_zee_api_v1_api_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -438,7 +438,7 @@ func (x *NamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NamespacesRequest.ProtoReflect.Descriptor instead.
 func (*NamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{8}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{8}
 }
 
 type NamespacesResponse struct {
@@ -450,7 +450,7 @@ type NamespacesResponse struct {
 
 func (x *NamespacesResponse) Reset() {
 	*x = NamespacesResponse{}
-	mi := &file_z_api_v1_api_proto_msgTypes[9]
+	mi := &file_zee_api_v1_api_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -462,7 +462,7 @@ func (x *NamespacesResponse) String() string {
 func (*NamespacesResponse) ProtoMessage() {}
 
 func (x *NamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[9]
+	mi := &file_zee_api_v1_api_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -475,7 +475,7 @@ func (x *NamespacesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NamespacesResponse.ProtoReflect.Descriptor instead.
 func (*NamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{9}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *NamespacesResponse) GetNamespaces() map[string]*Namespace {
@@ -496,7 +496,7 @@ type NamespaceRelation struct {
 
 func (x *NamespaceRelation) Reset() {
 	*x = NamespaceRelation{}
-	mi := &file_z_api_v1_api_proto_msgTypes[10]
+	mi := &file_zee_api_v1_api_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -508,7 +508,7 @@ func (x *NamespaceRelation) String() string {
 func (*NamespaceRelation) ProtoMessage() {}
 
 func (x *NamespaceRelation) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[10]
+	mi := &file_zee_api_v1_api_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -521,7 +521,7 @@ func (x *NamespaceRelation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NamespaceRelation.ProtoReflect.Descriptor instead.
 func (*NamespaceRelation) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{10}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *NamespaceRelation) GetNamespace() string {
@@ -555,7 +555,7 @@ type WriteNamespaceRelationsRequest struct {
 
 func (x *WriteNamespaceRelationsRequest) Reset() {
 	*x = WriteNamespaceRelationsRequest{}
-	mi := &file_z_api_v1_api_proto_msgTypes[11]
+	mi := &file_zee_api_v1_api_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -567,7 +567,7 @@ func (x *WriteNamespaceRelationsRequest) String() string {
 func (*WriteNamespaceRelationsRequest) ProtoMessage() {}
 
 func (x *WriteNamespaceRelationsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[11]
+	mi := &file_zee_api_v1_api_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -580,7 +580,7 @@ func (x *WriteNamespaceRelationsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WriteNamespaceRelationsRequest.ProtoReflect.Descriptor instead.
 func (*WriteNamespaceRelationsRequest) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{11}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *WriteNamespaceRelationsRequest) GetAdds() []*NamespaceRelation {
@@ -605,7 +605,7 @@ type WriteNamespaceRelationsResponse struct {
 
 func (x *WriteNamespaceRelationsResponse) Reset() {
 	*x = WriteNamespaceRelationsResponse{}
-	mi := &file_z_api_v1_api_proto_msgTypes[12]
+	mi := &file_zee_api_v1_api_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -617,7 +617,7 @@ func (x *WriteNamespaceRelationsResponse) String() string {
 func (*WriteNamespaceRelationsResponse) ProtoMessage() {}
 
 func (x *WriteNamespaceRelationsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[12]
+	mi := &file_zee_api_v1_api_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -630,7 +630,7 @@ func (x *WriteNamespaceRelationsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WriteNamespaceRelationsResponse.ProtoReflect.Descriptor instead.
 func (*WriteNamespaceRelationsResponse) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{12}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{12}
 }
 
 type ParentRelationsRequest struct {
@@ -644,7 +644,7 @@ type ParentRelationsRequest struct {
 
 func (x *ParentRelationsRequest) Reset() {
 	*x = ParentRelationsRequest{}
-	mi := &file_z_api_v1_api_proto_msgTypes[13]
+	mi := &file_zee_api_v1_api_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -656,7 +656,7 @@ func (x *ParentRelationsRequest) String() string {
 func (*ParentRelationsRequest) ProtoMessage() {}
 
 func (x *ParentRelationsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[13]
+	mi := &file_zee_api_v1_api_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -669,7 +669,7 @@ func (x *ParentRelationsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ParentRelationsRequest.ProtoReflect.Descriptor instead.
 func (*ParentRelationsRequest) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{13}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ParentRelationsRequest) GetParentNamespace() string {
@@ -702,7 +702,7 @@ type ParentRelationsResponse struct {
 
 func (x *ParentRelationsResponse) Reset() {
 	*x = ParentRelationsResponse{}
-	mi := &file_z_api_v1_api_proto_msgTypes[14]
+	mi := &file_zee_api_v1_api_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -714,7 +714,7 @@ func (x *ParentRelationsResponse) String() string {
 func (*ParentRelationsResponse) ProtoMessage() {}
 
 func (x *ParentRelationsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_z_api_v1_api_proto_msgTypes[14]
+	mi := &file_zee_api_v1_api_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -727,7 +727,7 @@ func (x *ParentRelationsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ParentRelationsResponse.ProtoReflect.Descriptor instead.
 func (*ParentRelationsResponse) Descriptor() ([]byte, []int) {
-	return file_z_api_v1_api_proto_rawDescGZIP(), []int{14}
+	return file_zee_api_v1_api_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ParentRelationsResponse) GetRelations() map[string]*Relation {
@@ -737,131 +737,133 @@ func (x *ParentRelationsResponse) GetRelations() map[string]*Relation {
 	return nil
 }
 
-var File_z_api_v1_api_proto protoreflect.FileDescriptor
+var File_zee_api_v1_api_proto protoreflect.FileDescriptor
 
-const file_z_api_v1_api_proto_rawDesc = "" +
+const file_zee_api_v1_api_proto_rawDesc = "" +
 	"\n" +
-	"\x12z/api/v1/api.proto\x12\bz.api.v1\"O\n" +
+	"\x14zee/api/v1/api.proto\x12\n" +
+	"zee.api.v1\"O\n" +
 	"\x03Set\x12\x1c\n" +
 	"\tnamespace\x18\x01 \x01(\tR\tnamespace\x12\x0e\n" +
 	"\x02id\x18\x02 \x01(\tR\x02id\x12\x1a\n" +
-	"\brelation\x18\x03 \x01(\tR\brelation\"S\n" +
-	"\x05Tuple\x12%\n" +
-	"\x06parent\x18\x01 \x01(\v2\r.z.api.v1.SetR\x06parent\x12#\n" +
-	"\x05child\x18\x02 \x01(\v2\r.z.api.v1.SetR\x05child\",\n" +
+	"\brelation\x18\x03 \x01(\tR\brelation\"W\n" +
+	"\x05Tuple\x12'\n" +
+	"\x06parent\x18\x01 \x01(\v2\x0f.zee.api.v1.SetR\x06parent\x12%\n" +
+	"\x05child\x18\x02 \x01(\v2\x0f.zee.api.v1.SetR\x05child\",\n" +
 	"\bRelation\x12 \n" +
-	"\vpermissions\x18\x01 \x03(\tR\vpermissions\"\x9f\x01\n" +
-	"\tNamespace\x12@\n" +
-	"\trelations\x18\x01 \x03(\v2\".z.api.v1.Namespace.RelationsEntryR\trelations\x1aP\n" +
+	"\vpermissions\x18\x01 \x03(\tR\vpermissions\"\xa3\x01\n" +
+	"\tNamespace\x12B\n" +
+	"\trelations\x18\x01 \x03(\v2$.zee.api.v1.Namespace.RelationsEntryR\trelations\x1aR\n" +
 	"\x0eRelationsEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12(\n" +
-	"\x05value\x18\x02 \x01(\v2\x12.z.api.v1.RelationR\x05value:\x028\x01\"Z\n" +
-	"\fCheckRequest\x12%\n" +
-	"\x06parent\x18\x01 \x01(\v2\r.z.api.v1.SetR\x06parent\x12#\n" +
-	"\x05child\x18\x02 \x01(\v2\r.z.api.v1.SetR\x05child\")\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
+	"\x05value\x18\x02 \x01(\v2\x14.zee.api.v1.RelationR\x05value:\x028\x01\"^\n" +
+	"\fCheckRequest\x12'\n" +
+	"\x06parent\x18\x01 \x01(\v2\x0f.zee.api.v1.SetR\x06parent\x12%\n" +
+	"\x05child\x18\x02 \x01(\v2\x0f.zee.api.v1.SetR\x05child\")\n" +
 	"\rCheckResponse\x12\x18\n" +
-	"\aallowed\x18\x01 \x01(\bR\aallowed\"^\n" +
-	"\fWriteRequest\x12#\n" +
-	"\x04adds\x18\x01 \x03(\v2\x0f.z.api.v1.TupleR\x04adds\x12)\n" +
-	"\aremoves\x18\x02 \x03(\v2\x0f.z.api.v1.TupleR\aremoves\"\x0f\n" +
+	"\aallowed\x18\x01 \x01(\bR\aallowed\"b\n" +
+	"\fWriteRequest\x12%\n" +
+	"\x04adds\x18\x01 \x03(\v2\x11.zee.api.v1.TupleR\x04adds\x12+\n" +
+	"\aremoves\x18\x02 \x03(\v2\x11.zee.api.v1.TupleR\aremoves\"\x0f\n" +
 	"\rWriteResponse\"\x13\n" +
-	"\x11NamespacesRequest\"\xb6\x01\n" +
-	"\x12NamespacesResponse\x12L\n" +
+	"\x11NamespacesRequest\"\xba\x01\n" +
+	"\x12NamespacesResponse\x12N\n" +
 	"\n" +
-	"namespaces\x18\x01 \x03(\v2,.z.api.v1.NamespacesResponse.NamespacesEntryR\n" +
-	"namespaces\x1aR\n" +
+	"namespaces\x18\x01 \x03(\v2..zee.api.v1.NamespacesResponse.NamespacesEntryR\n" +
+	"namespaces\x1aT\n" +
 	"\x0fNamespacesEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12)\n" +
-	"\x05value\x18\x02 \x01(\v2\x13.z.api.v1.NamespaceR\x05value:\x028\x01\"m\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12+\n" +
+	"\x05value\x18\x02 \x01(\v2\x15.zee.api.v1.NamespaceR\x05value:\x028\x01\"m\n" +
 	"\x11NamespaceRelation\x12\x1c\n" +
 	"\tnamespace\x18\x01 \x01(\tR\tnamespace\x12\x1a\n" +
 	"\brelation\x18\x02 \x01(\tR\brelation\x12\x1e\n" +
 	"\n" +
 	"permission\x18\x03 \x01(\tR\n" +
-	"permission\"\x88\x01\n" +
-	"\x1eWriteNamespaceRelationsRequest\x12/\n" +
-	"\x04adds\x18\x01 \x03(\v2\x1b.z.api.v1.NamespaceRelationR\x04adds\x125\n" +
-	"\aremoves\x18\x02 \x03(\v2\x1b.z.api.v1.NamespaceRelationR\aremoves\"!\n" +
-	"\x1fWriteNamespaceRelationsResponse\"\x85\x01\n" +
+	"permission\"\x8c\x01\n" +
+	"\x1eWriteNamespaceRelationsRequest\x121\n" +
+	"\x04adds\x18\x01 \x03(\v2\x1d.zee.api.v1.NamespaceRelationR\x04adds\x127\n" +
+	"\aremoves\x18\x02 \x03(\v2\x1d.zee.api.v1.NamespaceRelationR\aremoves\"!\n" +
+	"\x1fWriteNamespaceRelationsResponse\"\x87\x01\n" +
 	"\x16ParentRelationsRequest\x12)\n" +
 	"\x10parent_namespace\x18\x01 \x01(\tR\x0fparentNamespace\x12\x1b\n" +
-	"\tparent_id\x18\x02 \x01(\tR\bparentId\x12#\n" +
-	"\x05child\x18\x03 \x01(\v2\r.z.api.v1.SetR\x05child\"\xbb\x01\n" +
-	"\x17ParentRelationsResponse\x12N\n" +
-	"\trelations\x18\x01 \x03(\v20.z.api.v1.ParentRelationsResponse.RelationsEntryR\trelations\x1aP\n" +
+	"\tparent_id\x18\x02 \x01(\tR\bparentId\x12%\n" +
+	"\x05child\x18\x03 \x01(\v2\x0f.zee.api.v1.SetR\x05child\"\xbf\x01\n" +
+	"\x17ParentRelationsResponse\x12P\n" +
+	"\trelations\x18\x01 \x03(\v22.zee.api.v1.ParentRelationsResponse.RelationsEntryR\trelations\x1aR\n" +
 	"\x0eRelationsEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12(\n" +
-	"\x05value\x18\x02 \x01(\v2\x12.z.api.v1.RelationR\x05value:\x028\x012\x91\x03\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
+	"\x05value\x18\x02 \x01(\v2\x14.zee.api.v1.RelationR\x05value:\x028\x012\xa5\x03\n" +
 	"\n" +
-	"ApiService\x128\n" +
-	"\x05Check\x12\x16.z.api.v1.CheckRequest\x1a\x17.z.api.v1.CheckResponse\x128\n" +
-	"\x05Write\x12\x16.z.api.v1.WriteRequest\x1a\x17.z.api.v1.WriteResponse\x12G\n" +
+	"ApiService\x12<\n" +
+	"\x05Check\x12\x18.zee.api.v1.CheckRequest\x1a\x19.zee.api.v1.CheckResponse\x12<\n" +
+	"\x05Write\x12\x18.zee.api.v1.WriteRequest\x1a\x19.zee.api.v1.WriteResponse\x12K\n" +
 	"\n" +
-	"Namespaces\x12\x1b.z.api.v1.NamespacesRequest\x1a\x1c.z.api.v1.NamespacesResponse\x12n\n" +
-	"\x17WriteNamespaceRelations\x12(.z.api.v1.WriteNamespaceRelationsRequest\x1a).z.api.v1.WriteNamespaceRelationsResponse\x12V\n" +
-	"\x0fParentRelations\x12 .z.api.v1.ParentRelationsRequest\x1a!.z.api.v1.ParentRelationsResponseB\x85\x01\n" +
-	"\fcom.z.api.v1B\bApiProtoP\x01Z)github.com/kw510/z/pkg/gen/z/api/v1;apiv1\xa2\x02\x03ZAX\xaa\x02\bZ.Api.V1\xca\x02\bZ\\Api\\V1\xe2\x02\x14Z\\Api\\V1\\GPBMetadata\xea\x02\n" +
-	"Z::Api::V1b\x06proto3"
+	"Namespaces\x12\x1d.zee.api.v1.NamespacesRequest\x1a\x1e.zee.api.v1.NamespacesResponse\x12r\n" +
+	"\x17WriteNamespaceRelations\x12*.zee.api.v1.WriteNamespaceRelationsRequest\x1a+.zee.api.v1.WriteNamespaceRelationsResponse\x12Z\n" +
+	"\x0fParentRelations\x12\".zee.api.v1.ParentRelationsRequest\x1a#.zee.api.v1.ParentRelationsResponseB\x93\x01\n" +
+	"\x0ecom.zee.api.v1B\bApiProtoP\x01Z-github.com/kw510/zee/pkg/gen/zee/api/v1;apiv1\xa2\x02\x03ZAX\xaa\x02\n" +
+	"Zee.Api.V1\xca\x02\n" +
+	"Zee\\Api\\V1\xe2\x02\x16Zee\\Api\\V1\\GPBMetadata\xea\x02\fZee::Api::V1b\x06proto3"
 
 var (
-	file_z_api_v1_api_proto_rawDescOnce sync.Once
-	file_z_api_v1_api_proto_rawDescData []byte
+	file_zee_api_v1_api_proto_rawDescOnce sync.Once
+	file_zee_api_v1_api_proto_rawDescData []byte
 )
 
-func file_z_api_v1_api_proto_rawDescGZIP() []byte {
-	file_z_api_v1_api_proto_rawDescOnce.Do(func() {
-		file_z_api_v1_api_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_z_api_v1_api_proto_rawDesc), len(file_z_api_v1_api_proto_rawDesc)))
+func file_zee_api_v1_api_proto_rawDescGZIP() []byte {
+	file_zee_api_v1_api_proto_rawDescOnce.Do(func() {
+		file_zee_api_v1_api_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_zee_api_v1_api_proto_rawDesc), len(file_zee_api_v1_api_proto_rawDesc)))
 	})
-	return file_z_api_v1_api_proto_rawDescData
+	return file_zee_api_v1_api_proto_rawDescData
 }
 
-var file_z_api_v1_api_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
-var file_z_api_v1_api_proto_goTypes = []any{
-	(*Set)(nil),                             // 0: z.api.v1.Set
-	(*Tuple)(nil),                           // 1: z.api.v1.Tuple
-	(*Relation)(nil),                        // 2: z.api.v1.Relation
-	(*Namespace)(nil),                       // 3: z.api.v1.Namespace
-	(*CheckRequest)(nil),                    // 4: z.api.v1.CheckRequest
-	(*CheckResponse)(nil),                   // 5: z.api.v1.CheckResponse
-	(*WriteRequest)(nil),                    // 6: z.api.v1.WriteRequest
-	(*WriteResponse)(nil),                   // 7: z.api.v1.WriteResponse
-	(*NamespacesRequest)(nil),               // 8: z.api.v1.NamespacesRequest
-	(*NamespacesResponse)(nil),              // 9: z.api.v1.NamespacesResponse
-	(*NamespaceRelation)(nil),               // 10: z.api.v1.NamespaceRelation
-	(*WriteNamespaceRelationsRequest)(nil),  // 11: z.api.v1.WriteNamespaceRelationsRequest
-	(*WriteNamespaceRelationsResponse)(nil), // 12: z.api.v1.WriteNamespaceRelationsResponse
-	(*ParentRelationsRequest)(nil),          // 13: z.api.v1.ParentRelationsRequest
-	(*ParentRelationsResponse)(nil),         // 14: z.api.v1.ParentRelationsResponse
-	nil,                                     // 15: z.api.v1.Namespace.RelationsEntry
-	nil,                                     // 16: z.api.v1.NamespacesResponse.NamespacesEntry
-	nil,                                     // 17: z.api.v1.ParentRelationsResponse.RelationsEntry
+var file_zee_api_v1_api_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_zee_api_v1_api_proto_goTypes = []any{
+	(*Set)(nil),                             // 0: zee.api.v1.Set
+	(*Tuple)(nil),                           // 1: zee.api.v1.Tuple
+	(*Relation)(nil),                        // 2: zee.api.v1.Relation
+	(*Namespace)(nil),                       // 3: zee.api.v1.Namespace
+	(*CheckRequest)(nil),                    // 4: zee.api.v1.CheckRequest
+	(*CheckResponse)(nil),                   // 5: zee.api.v1.CheckResponse
+	(*WriteRequest)(nil),                    // 6: zee.api.v1.WriteRequest
+	(*WriteResponse)(nil),                   // 7: zee.api.v1.WriteResponse
+	(*NamespacesRequest)(nil),               // 8: zee.api.v1.NamespacesRequest
+	(*NamespacesResponse)(nil),              // 9: zee.api.v1.NamespacesResponse
+	(*NamespaceRelation)(nil),               // 10: zee.api.v1.NamespaceRelation
+	(*WriteNamespaceRelationsRequest)(nil),  // 11: zee.api.v1.WriteNamespaceRelationsRequest
+	(*WriteNamespaceRelationsResponse)(nil), // 12: zee.api.v1.WriteNamespaceRelationsResponse
+	(*ParentRelationsRequest)(nil),          // 13: zee.api.v1.ParentRelationsRequest
+	(*ParentRelationsResponse)(nil),         // 14: zee.api.v1.ParentRelationsResponse
+	nil,                                     // 15: zee.api.v1.Namespace.RelationsEntry
+	nil,                                     // 16: zee.api.v1.NamespacesResponse.NamespacesEntry
+	nil,                                     // 17: zee.api.v1.ParentRelationsResponse.RelationsEntry
 }
-var file_z_api_v1_api_proto_depIdxs = []int32{
-	0,  // 0: z.api.v1.Tuple.parent:type_name -> z.api.v1.Set
-	0,  // 1: z.api.v1.Tuple.child:type_name -> z.api.v1.Set
-	15, // 2: z.api.v1.Namespace.relations:type_name -> z.api.v1.Namespace.RelationsEntry
-	0,  // 3: z.api.v1.CheckRequest.parent:type_name -> z.api.v1.Set
-	0,  // 4: z.api.v1.CheckRequest.child:type_name -> z.api.v1.Set
-	1,  // 5: z.api.v1.WriteRequest.adds:type_name -> z.api.v1.Tuple
-	1,  // 6: z.api.v1.WriteRequest.removes:type_name -> z.api.v1.Tuple
-	16, // 7: z.api.v1.NamespacesResponse.namespaces:type_name -> z.api.v1.NamespacesResponse.NamespacesEntry
-	10, // 8: z.api.v1.WriteNamespaceRelationsRequest.adds:type_name -> z.api.v1.NamespaceRelation
-	10, // 9: z.api.v1.WriteNamespaceRelationsRequest.removes:type_name -> z.api.v1.NamespaceRelation
-	0,  // 10: z.api.v1.ParentRelationsRequest.child:type_name -> z.api.v1.Set
-	17, // 11: z.api.v1.ParentRelationsResponse.relations:type_name -> z.api.v1.ParentRelationsResponse.RelationsEntry
-	2,  // 12: z.api.v1.Namespace.RelationsEntry.value:type_name -> z.api.v1.Relation
-	3,  // 13: z.api.v1.NamespacesResponse.NamespacesEntry.value:type_name -> z.api.v1.Namespace
-	2,  // 14: z.api.v1.ParentRelationsResponse.RelationsEntry.value:type_name -> z.api.v1.Relation
-	4,  // 15: z.api.v1.ApiService.Check:input_type -> z.api.v1.CheckRequest
-	6,  // 16: z.api.v1.ApiService.Write:input_type -> z.api.v1.WriteRequest
-	8,  // 17: z.api.v1.ApiService.Namespaces:input_type -> z.api.v1.NamespacesRequest
-	11, // 18: z.api.v1.ApiService.WriteNamespaceRelations:input_type -> z.api.v1.WriteNamespaceRelationsRequest
-	13, // 19: z.api.v1.ApiService.ParentRelations:input_type -> z.api.v1.ParentRelationsRequest
-	5,  // 20: z.api.v1.ApiService.Check:output_type -> z.api.v1.CheckResponse
-	7,  // 21: z.api.v1.ApiService.Write:output_type -> z.api.v1.WriteResponse
-	9,  // 22: z.api.v1.ApiService.Namespaces:output_type -> z.api.v1.NamespacesResponse
-	12, // 23: z.api.v1.ApiService.WriteNamespaceRelations:output_type -> z.api.v1.WriteNamespaceRelationsResponse
-	14, // 24: z.api.v1.ApiService.ParentRelations:output_type -> z.api.v1.ParentRelationsResponse
+var file_zee_api_v1_api_proto_depIdxs = []int32{
+	0,  // 0: zee.api.v1.Tuple.parent:type_name -> zee.api.v1.Set
+	0,  // 1: zee.api.v1.Tuple.child:type_name -> zee.api.v1.Set
+	15, // 2: zee.api.v1.Namespace.relations:type_name -> zee.api.v1.Namespace.RelationsEntry
+	0,  // 3: zee.api.v1.CheckRequest.parent:type_name -> zee.api.v1.Set
+	0,  // 4: zee.api.v1.CheckRequest.child:type_name -> zee.api.v1.Set
+	1,  // 5: zee.api.v1.WriteRequest.adds:type_name -> zee.api.v1.Tuple
+	1,  // 6: zee.api.v1.WriteRequest.removes:type_name -> zee.api.v1.Tuple
+	16, // 7: zee.api.v1.NamespacesResponse.namespaces:type_name -> zee.api.v1.NamespacesResponse.NamespacesEntry
+	10, // 8: zee.api.v1.WriteNamespaceRelationsRequest.adds:type_name -> zee.api.v1.NamespaceRelation
+	10, // 9: zee.api.v1.WriteNamespaceRelationsRequest.removes:type_name -> zee.api.v1.NamespaceRelation
+	0,  // 10: zee.api.v1.ParentRelationsRequest.child:type_name -> zee.api.v1.Set
+	17, // 11: zee.api.v1.ParentRelationsResponse.relations:type_name -> zee.api.v1.ParentRelationsResponse.RelationsEntry
+	2,  // 12: zee.api.v1.Namespace.RelationsEntry.value:type_name -> zee.api.v1.Relation
+	3,  // 13: zee.api.v1.NamespacesResponse.NamespacesEntry.value:type_name -> zee.api.v1.Namespace
+	2,  // 14: zee.api.v1.ParentRelationsResponse.RelationsEntry.value:type_name -> zee.api.v1.Relation
+	4,  // 15: zee.api.v1.ApiService.Check:input_type -> zee.api.v1.CheckRequest
+	6,  // 16: zee.api.v1.ApiService.Write:input_type -> zee.api.v1.WriteRequest
+	8,  // 17: zee.api.v1.ApiService.Namespaces:input_type -> zee.api.v1.NamespacesRequest
+	11, // 18: zee.api.v1.ApiService.WriteNamespaceRelations:input_type -> zee.api.v1.WriteNamespaceRelationsRequest
+	13, // 19: zee.api.v1.ApiService.ParentRelations:input_type -> zee.api.v1.ParentRelationsRequest
+	5,  // 20: zee.api.v1.ApiService.Check:output_type -> zee.api.v1.CheckResponse
+	7,  // 21: zee.api.v1.ApiService.Write:output_type -> zee.api.v1.WriteResponse
+	9,  // 22: zee.api.v1.ApiService.Namespaces:output_type -> zee.api.v1.NamespacesResponse
+	12, // 23: zee.api.v1.ApiService.WriteNamespaceRelations:output_type -> zee.api.v1.WriteNamespaceRelationsResponse
+	14, // 24: zee.api.v1.ApiService.ParentRelations:output_type -> zee.api.v1.ParentRelationsResponse
 	20, // [20:25] is the sub-list for method output_type
 	15, // [15:20] is the sub-list for method input_type
 	15, // [15:15] is the sub-list for extension type_name
@@ -869,26 +871,26 @@ var file_z_api_v1_api_proto_depIdxs = []int32{
 	0,  // [0:15] is the sub-list for field type_name
 }
 
-func init() { file_z_api_v1_api_proto_init() }
-func file_z_api_v1_api_proto_init() {
-	if File_z_api_v1_api_proto != nil {
+func init() { file_zee_api_v1_api_proto_init() }
+func file_zee_api_v1_api_proto_init() {
+	if File_zee_api_v1_api_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_z_api_v1_api_proto_rawDesc), len(file_z_api_v1_api_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_zee_api_v1_api_proto_rawDesc), len(file_zee_api_v1_api_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_z_api_v1_api_proto_goTypes,
-		DependencyIndexes: file_z_api_v1_api_proto_depIdxs,
-		MessageInfos:      file_z_api_v1_api_proto_msgTypes,
+		GoTypes:           file_zee_api_v1_api_proto_goTypes,
+		DependencyIndexes: file_zee_api_v1_api_proto_depIdxs,
+		MessageInfos:      file_zee_api_v1_api_proto_msgTypes,
 	}.Build()
-	File_z_api_v1_api_proto = out.File
-	file_z_api_v1_api_proto_goTypes = nil
-	file_z_api_v1_api_proto_depIdxs = nil
+	File_zee_api_v1_api_proto = out.File
+	file_zee_api_v1_api_proto_goTypes = nil
+	file_zee_api_v1_api_proto_depIdxs = nil
 }

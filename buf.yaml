@@ -2,7 +2,7 @@
 version: v2
 modules:
   - path: proto
-    name: buf.build/kw510/common
+    name: buf.build/kw510/zee
 lint:
   use:
     - STANDARD

@@ -8,9 +8,9 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/kw510/z/pkg/db"
-	"github.com/kw510/z/pkg/srv"
-	"github.com/kw510/z/pkg/srv/middleware"
+	"github.com/kw510/zee/pkg/db"
+	"github.com/kw510/zee/pkg/srv"
+	"github.com/kw510/zee/pkg/srv/middleware"
 )
 
 func main() {

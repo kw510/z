@@ -1,4 +1,4 @@
-module github.com/kw510/z
+module github.com/kw510/zee
 
 go 1.24.3
 

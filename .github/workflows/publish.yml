@@ -59,7 +59,7 @@ jobs:
 
       - uses: actions/delete-package-versions@v5
         with:
-          package-name: z
+          package-name: zee
           package-type: container
           min-versions-to-keep: 2
           delete-only-untagged-versions: true

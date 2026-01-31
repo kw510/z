@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package z.api.v1;
+package zee.api.v1;
 
 service ApiService {
   rpc Check(CheckRequest) returns (CheckResponse);
